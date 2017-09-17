@@ -11,29 +11,29 @@ def insertionSort(arr):
 def selectionSort(arr):
     n = len(arr)
     for i in range(n):
-        min = i
-        for j in range(i+1, n, 1):
-            if arr[j] < arr[min]:
-                min = j
-        arr[i], arr[min] = arr[min], arr[i]
+        minPtr = i
+        for j in range(i+1, n):
+            if arr[j] < arr[minPtr]:
+                minPtr = j
+        arr[i], arr[minPtr] = arr[minPtr], arr[i]
     
     return arr
 
 def bubbleSort(arr):
-    for i in range(len(l)):
-        for j in range(i + 1, len(l)):
-            if arr[j] < arr[i]:
-                arr[i], arr[j] = arr[j], arr[i]
+    for i in range(len(arr)):
+        for j in range(len(arr) - i - 1):
+            if arr[j] > arr[j+1]:
+                arr[j+1], arr[j] = arr[j], arr[j+1]
     return arr
 
 while 1:
     l = [int(ll) for ll in input('Please sort list: ').split(' ')]
     
     print('Selection Sort:')
-    print(' '.join(selectionSort([str(ll) for ll in selectionSort(l)])))
+    print(' '.join([str(ll) for ll in selectionSort(list(l))]))
     print('Insertion Sort:')
-    print(' '.join(insertionSort([str(ll) for ll in insertionSort(l)])))
+    print(' '.join([str(ll) for ll in insertionSort(list(l))]))
     print('Bubble Sort:')
-    print(' '.join(bubbleSort([str(ll) for ll in bubbleSort(l)])))
+    print(' '.join([str(ll) for ll in bubbleSort(list(l))]))
     print('-------------------------------')
 

@@ -9,14 +9,14 @@ def insertionSort(arr):
     return arr
 
 def selectionSort(arr):
-    for ptr in range(len(arr)):
-        minPtr = ptr
-        for i in range(ptr + 1, len(arr), 1):
-            if arr[i] < arr[minPtr]:
-                minPtr = i
-        tmp = arr[minPtr]
-        del arr[minPtr]
-        arr.insert(ptr, tmp)
+    n = len(arr)
+    for i in range(n):
+        min = i
+        for j in range(i+1, n, 1):
+            if arr[j] < arr[min]:
+                min = j
+        arr[i], arr[min] = arr[min], arr[i]
+    
     return arr
 
 def bubbleSort(arr):
